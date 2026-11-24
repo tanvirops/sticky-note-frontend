@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Notes</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/partial/home.css">
+</head>
+
+<body>
+    <!-- start header html  -->
+    <header class="header fade-in">
+        <p> <span id="username">Loading...</span></p>
+        <a href="/" class="logo">
+            <h5>Sticky Notes</h5>
+        </a>
+        <div>
+            <button class="btn logout-btn" id="logoutBtn">
+                Logout
+            </button>
+        </div>
+    </header>
+    <!-- end header html -->
+
+    <!-- start main content html -->
+    <main class="main-content home-container slide-in-up">
+        <!-- Content will be dynamically loaded here based on notes availability -->
+    </main>
+    <!-- End main content html -->
+
+    <script src="js/index.js"></script>
+    <script src="js/common/auth.js"></script>
+    <script src="js/partial/home.js"></script>
+</body>
+
+</html>

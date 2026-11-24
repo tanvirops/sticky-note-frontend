@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Sticky Notes</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/partial/register.css">
+</head>
+<body>
+    <div class="register-container slide-in-up">
+        <div class="logo">
+            <h1>📝 Sticky Notes</h1>
+            <p>Create your account to get started</p>
+        </div>
+
+        <div class="error-message" id="errorMessage"></div>
+        <div class="success-message" id="successMessage"></div>
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Creating your account...</p>
+        </div>
+
+        <form id="registerForm">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input 
+                    type="text" 
+                    id="username" 
+                    name="username" 
+                    required 
+                    minlength="3"
+                    maxlength="50"
+                    pattern="[a-zA-Z0-9_]+"
+                    placeholder="Enter your username"
+                >
+                <div class="field-error" id="username-error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    required 
+                    placeholder="Enter your email"
+                >
+                <div class="field-error" id="email-error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    required 
+                    minlength="6"
+                    placeholder="Enter your password"
+                >
+                <div class="password-requirements">
+                    <p>Password must contain:</p>
+                    <ul>
+                        <li id="length-req">At least 6 characters</li>
+                        <li id="lower-req">One lowercase letter</li>
+                        <li id="upper-req">One uppercase letter</li>
+                        <li id="number-req">One number</li>
+                    </ul>
+                </div>
+                <div class="password-strength">
+                    <div class="password-strength-bar"></div>
+                </div>
+                <div class="field-error" id="password-error"></div>
+            </div>
+
+            <div class="form-group has-indicator">
+                <label for="confirmPassword">Confirm Password</label>
+                <input 
+                    type="password" 
+                    id="confirmPassword" 
+                    name="confirmPassword" 
+                    required 
+                    placeholder="Confirm your password"
+                >
+                <span class="password-match-indicator"></span>
+                <div class="field-error" id="confirmPassword-error"></div>
+            </div>
+
+            <div class="terms-container">
+                <label>
+                    <input type="checkbox" id="acceptTerms" required>
+                    I agree to the <a href="#" onclick="showTerms()">Terms of Service</a> and 
+                    <a href="#" onclick="showPrivacy()">Privacy Policy</a>
+                </label>
+            </div>
+
+            <button type="submit" class="register-btn" id="registerBtn">
+                Create Account
+            </button>
+        </form>
+
+        <div class="register-link">
+            Already have an account? <a href="login.html">Sign in here</a>
+        </div>
+    </div>
+
+    <script src="js/index.js"></script>
+    <script src="js/partial/register.js"></script>
+    
+    <script>
+        // Placeholder functions for terms and privacy
+        function showTerms() {
+            Utils.showMessage('Terms of Service would be displayed here.', 'success');
+        }
+        
+        function showPrivacy() {
+            Utils.showMessage('Privacy Policy would be displayed here.', 'success');
+        }
+    </script>
+</body>
+</html>
